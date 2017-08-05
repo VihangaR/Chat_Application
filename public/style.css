@@ -1,0 +1,37 @@
+html, body, .bg {
+    background: #43cea2;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #185a9d, #43cea2);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #185a9d, #43cea2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    font-family: 'Roboto', sans-serif;
+    overflow-y: hidden;
+}
+
+#messages {
+    height: 50vh;
+    overflow: auto;
+    background: #f9f9f9;
+    padding: 5px 10px;
+}
+.msgLine{
+    margin: 5px 0;
+}
+
+.cBlack {
+    color: black;
+}
+.cBlack:hover {
+    color: #00C4A7;
+}
+.onlineBox{
+    margin-top: 2%;
+}
+@media screen and (max-width: 768px) {
+    .onlineBox{
+        margin-top: 8%;
+    }
+    .column .msgBox{
+        width: 94%;
+        margin-left: 3%;
+    }
+}

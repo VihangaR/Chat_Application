@@ -1,0 +1,53 @@
+<% include partials/header.ejs %>
+    <section class="hero is-fullheight bg">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-half is-offset-one-quarter">
+                        <div class="box">
+                            <h1 class="title has-text-centered">
+                                Login
+                            </h1>
+                            <form action="/login" method="POST" style="padding: 10px;">
+                                <div class="columns">
+                                    <div class="column">
+                                        <div class="field">
+                                            <label for="" class="label">Username</label>
+                                            <div class="control">
+                                                <input id="user" type="text" class="input" name="username" placeholder="Username">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="columns">
+                                    <div class="column">
+                                        <div class="field">
+                                            <label for="" class="label">Password</label>
+                                            <div class="control">
+                                                <input id="pass" type="password" class="input" name="password" placeholder="Password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="columns">
+                                    <div class="column">
+                                        <div class="field is-grouped">
+                                            <div class="control">
+                                                <button class="button is-primary">Login</button>
+                                            </div>
+                                            <div class="control">
+                                                <a class="button is-primary" href="/register">Go to Register page</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+<% include partials/footer.ejs %>

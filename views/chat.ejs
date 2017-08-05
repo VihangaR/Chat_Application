@@ -1,0 +1,53 @@
+<% include partials/header.ejs %>
+    <script src="/chat.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <section class="hero is-fullheight bg">
+        <div class="hero-body">
+            <div class="container">
+                <div class="card">
+                    <div class="container">
+                        <div class="card-header">
+                            <p class="card-header-title">Logged in as: <span id="han" style="padding-left: 5px;"><%= handle %></span></p>
+                            <p class="card-header-icon">
+                                <span class="icon">
+                                    <a href="/logout">
+                                        <i class="fa fa-sign-out cBlack"></i>
+                                    </a>                                    
+                                </span>
+                            </p>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <div id="messages">
+                                    <% messages.forEach(function(msg){ %>
+                                        <div class='msgLine'><b><%= msg.handle %></b>: <%= msg.msg %></div>
+                                    <% }) %>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="card-footer"> -->
+                            <form action="" style="-webkit-appearance:none;">
+                                <div class="columns">
+                                    <div class="container">
+                                        <div class="column">
+                                            <input type="text" class="input msgBox" placeholder="Enter a message" id="m" autocomplete="off">
+                                        </div>
+                                    </div>
+                                    <div style="display: none;">
+                                        <button class="button is-primary"><i class="material-icons">send</i></button>
+                                    </div>
+                                </div>                            
+                                
+                            </form>
+                        <!-- </div> -->
+                    </div>                    
+                </div>
+                <div class="box onlineBox">
+                    Users Online: <span id="onlineUsers"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+<% include partials/footer.ejs %>
