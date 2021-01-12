@@ -25,7 +25,7 @@ var server = app.listen(app.get("port"), function() {
   console.log("Chat application has started on port", app.get("port"));
 });
 // Socket setup
-var io = socket(server);   
+var io = socket(server);
 
 var session = require("express-session")({
     secret: "agowfugaowzxdhrzxdrbzsrzr",
@@ -43,11 +43,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // Database Handling
-// mongoose.connect("mongodb://localhost/chat_application");
-mongoose.connect("mongodb://vihanga:1qaz0plm6@ds127063.mlab.com:27063/web_chat");
-// User.register(new User({username: "Admin2", handle: "PrinceBiceps"}), "qwe123", function(err, user){
-//     passport.authenticate("local");
-// });
+mongoose.connect("mongodb+srv://vihanga:qwe123@cluster0.qr5wr.mongodb.net/chat_app?retryWrites=true&w=majority");
 
 // =========================
 // LOGIN ROUTES
@@ -111,13 +107,13 @@ app.get("/chat", isLoggedIn, function(req, res){
     });
 });
 var userList = {}
-io.on("connection", function(socket){   
+io.on("connection", function(socket){
     socket.on("disconnect", function(){
         console.log("Socket has disconnected");
         console.log(userList);
         console.log(socket.id);
         delete userList[socket.id];
-        updateList(userList);        
+        updateList(userList);
     });
     socket.on("handle", function(handle){
         var sHandle = handle;
