@@ -118,13 +118,17 @@ io.on("connection", function(socket){
     socket.on("handle", function(handle){
         var sHandle = handle;
         userList[socket.id] = sHandle;
+        console.log(userList);
         console.log("We have a connection with " + userList[socket.id]);
         updateList(userList);
     })
     function updateList(userList){
         ul = []
         for(var key in userList){
-            ul.push(userList[key]);
+            tempUser = userList[key]
+            if(ul.includes(tempUser) == false){
+                ul.push(userList[key]);
+            }
             console.log(ul);
         }
         io.emit("user list", ul);
